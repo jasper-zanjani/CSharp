@@ -15,7 +15,7 @@ namespace csharp {
     static void trydate() {
       Console.WriteLine("Write a date (MM/DD/YYYY):");
       DateTime date = DateTime.Parse(Console.ReadLine());
-      Console.WriteLine("Parsed date: {0}",date.ToString());
+      Console.WriteLine($"Parsed date: {date.ToString()}");
     }
     static void getname() {
       Console.WriteLine("What's your name?");
@@ -26,9 +26,9 @@ namespace csharp {
       Console.WriteLine("How old are you?");
       int age = int.Parse(Console.ReadLine());
       age += 1;
-      Console.WriteLine("Next year you'll be {0} years old",age);
+      Console.WriteLine($"Next year you'll be {age} years old");
       age += 1;
-      Console.WriteLine("and the year after you'll be {0}}!",age);
+      Console.WriteLine($"and the year after you'll be {age}}!");
     } 
     enum Sign {
       AQUARIUS,
@@ -50,7 +50,7 @@ namespace csharp {
       Console.WriteLine("What day were you born (01-31):");
       string day = Console.ReadLine();
       Sign sign = Sign.VIRGO;
-      Console.WriteLine("Your sign is {0}!",sign);
+      Console.WriteLine($"Your sign is {sign}!");
     }
     static void newcar() {
       Car myCar = new Car();
