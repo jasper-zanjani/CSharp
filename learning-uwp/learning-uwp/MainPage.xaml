@@ -8,9 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	<Grid>
-		<Button Content="Button" Margin="0,145,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
-		<Button Content="Nuttob" Margin="0,219,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="Button_Click"/>
 
-	</Grid>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Rectangle Height="150" Fill="Beige" Grid.Row="0" />
+        <Rectangle Grid.Row="1" Fill="SteelBlue" />
+    </Grid>
 </Page>
