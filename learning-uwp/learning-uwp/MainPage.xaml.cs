@@ -34,7 +34,6 @@ namespace learning_uwp
             Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello world!");
             mediaElement.SetSource(stream, stream.ContentType);
             mediaElement.Play();
-            ResultTextBlock.Text = "Hello World!";
         }
 	}
 }
