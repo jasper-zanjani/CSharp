@@ -27,13 +27,9 @@ namespace learning_uwp
             this.InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MediaElement mediaElement = new MediaElement();
-            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
-            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello world!");
-            mediaElement.SetSource(stream, stream.ContentType);
-            mediaElement.Play();
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
-	}
+    }
 }

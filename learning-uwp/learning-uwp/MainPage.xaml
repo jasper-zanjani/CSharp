@@ -8,32 +8,23 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <RelativePanel>
-            <Button Name="SearchButton" Content="Search" RelativePanel.AlignRightWithPanel="True" Margin="0,0,10,0"/>
-            <TextBox Name="SearchTextBox" RelativePanel.LeftOf="SearchButton" Width="100" Margin="0,0,10,0" />
-            <TextBlock Text="Search:" RelativePanel.LeftOf="SearchTextBox" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="0,0,10,0" />
-        </RelativePanel>
-        <Border BorderThickness="3" Background="#FFE0E0E0" Grid.Row="2" BorderBrush="#FFD2D2D2">
-            <RelativePanel>
-                <TextBlock Name="ItemsTextBlock" Text="Items:" RelativePanel.AlignLeftWithPanel="True" Margin="10,5,5,5" />
-                <TextBlock Text="10" RelativePanel.RightOf="ItemsTextBlock" Margin="5,5,0,5" />
-
-                <TextBlock Name="VersionTextBlock" Text="1.0.0" RelativePanel.AlignRightWithPanel="True" Margin="0,5,10,5"/>
-                <TextBlock Text="Version:" RelativePanel.LeftOf="VersionTextBlock" Margin="0,5,5,5" />
-
-                <StackPanel RelativePanel.AlignHorizontalCenterWithPanel="True" Orientation="Horizontal">
-                    <TextBlock Text="User:" Margin="0,5,5,5" />
-                    <TextBlock Text="Bob" Margin="0,5,0,5" />
-
+    <StackPanel Orientation="Horizontal">
+        <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay" CompactPaneLength="10" OpenPaneLength="50">
+            <SplitView.Pane>
+                <StackPanel>
+                    <TextBlock Text="First" />
+                    <TextBlock Text="Second" />
+                    <TextBlock Text="Third" />
                 </StackPanel>
-            </RelativePanel>
-        </Border>
-    </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <StackPanel>
+                    <TextBlock Text="Fourth" />
+                    <TextBlock Text="Fifth" />
+                    <TextBlock Text="Sixth" />
+                </StackPanel>
+            </SplitView.Content>
+        </SplitView>
+        <Button Content="Clicke Me" Click="Button_Click"/>
+    </StackPanel>
 </Page>
