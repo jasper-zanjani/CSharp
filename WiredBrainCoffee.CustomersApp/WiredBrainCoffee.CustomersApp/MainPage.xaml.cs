@@ -23,9 +23,9 @@ namespace WiredBrainCoffee.CustomersApp
 
     private void Flip_Click(object sender, RoutedEventArgs e)
     {
-      int column = (int)customerListGrid.GetValue(Grid.ColumnProperty);
+      int column = Grid.GetColumn(customerListGrid);
       int newcolumn = column == 0 ? 2 : 0;
-      customerListGrid.SetValue(Grid.ColumnProperty, newcolumn);
+      Grid.SetColumn(customerListGrid, newcolumn);
       flipIcon.Symbol = newcolumn == 0 ? Symbol.Forward : Symbol.Back;
       }
 
