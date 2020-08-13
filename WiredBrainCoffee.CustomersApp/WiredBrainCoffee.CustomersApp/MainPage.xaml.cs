@@ -14,13 +14,19 @@ namespace WiredBrainCoffee.CustomersApp
       this.InitializeComponent();
     }
 
-    private async void ButtonAddCustomer_Click(object sender, RoutedEventArgs e)
+    private async void Add_Click(object sender, RoutedEventArgs e)
     {
       var messageDialog = new MessageDialog("Customer added!");
       await messageDialog.ShowAsync();
     }
 
-    private void CheckBox_ManipulationCompleted(object sender, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e)
+
+    private void Flip_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void Del_Click(object sender, RoutedEventArgs e)
     {
 
     }

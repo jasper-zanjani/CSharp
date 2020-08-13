@@ -33,14 +33,31 @@
         <RowDefinition Height="Auto"/>
         <RowDefinition/>
       </Grid.RowDefinitions>
-      <Button Click="ButtonAddCustomer_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
-        <Button.Content>
-          <StackPanel Orientation="Horizontal">
-            <SymbolIcon Symbol="AddFriend"/>
-            <TextBlock Text="Add friend" Margin="5 0 0 0"/>
-          </StackPanel>
-        </Button.Content>
-      </Button>
+      <StackPanel Orientation="Horizontal">
+        <Button Click="Flip_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+          <Button.Content>
+            <StackPanel Orientation="Horizontal">
+              <SymbolIcon Symbol="Forward"/>
+            </StackPanel>
+          </Button.Content>
+        </Button>
+        <Button Click="Add_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+          <Button.Content>
+            <StackPanel Orientation="Horizontal">
+              <SymbolIcon Symbol="AddFriend"/>
+              <TextBlock Text="Add" Margin="5 0 0 0"/>
+            </StackPanel>
+          </Button.Content>
+        </Button>
+        <Button Click="Del_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
+          <Button.Content>
+            <StackPanel Orientation="Horizontal">
+              <SymbolIcon Symbol="Delete"/>
+              <TextBlock Text="Delete" Margin="5 0 0 0"/>
+            </StackPanel>
+          </Button.Content>
+        </Button>
+      </StackPanel>
       <ListView Grid.Row="1">
         <ListViewItem>Thomas</ListViewItem>
         <ListViewItem>Steven</ListViewItem>
