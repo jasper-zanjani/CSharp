@@ -28,7 +28,11 @@
     </StackPanel>
     
     <!-- Customer list -->
-    <StackPanel Background="#EEEEEEEE" Grid.Row="1">
+    <Grid Background="#EEEEEEEE" Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
       <Button Click="ButtonAddCustomer_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
         <Button.Content>
           <StackPanel Orientation="Horizontal">
@@ -37,12 +41,18 @@
           </StackPanel>
         </Button.Content>
       </Button>
-      <ListView>
+      <ListView Grid.Row="1">
         <ListViewItem>Thomas</ListViewItem>
-        <ListViewItem>Julia</ListViewItem>
+        <ListViewItem>Steven</ListViewItem>
         <ListViewItem>Anna</ListViewItem>
+        <ListViewItem>Derrick</ListViewItem>
+        <ListViewItem>Parviz</ListViewItem>
+        <ListViewItem>Zeinab</ListViewItem>
+        <ListViewItem>Lilly</ListViewItem>
+        <ListViewItem>Jamal</ListViewItem>
+        <ListViewItem>Louise</ListViewItem>
       </ListView>
-    </StackPanel>
+    </Grid>
     
     <!-- Customer detail -->
     <StackPanel Grid.Row="1" Grid.Column="1">
