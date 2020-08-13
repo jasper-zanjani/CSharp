@@ -9,6 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Add customer" Click="Button_Click"/>
+        <Button Content="Add customer" 
+                Click="ButtonAddCustomer_Click" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="10"/>
     </Grid>
 </Page>
