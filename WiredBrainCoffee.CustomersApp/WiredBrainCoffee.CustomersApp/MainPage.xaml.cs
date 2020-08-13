@@ -19,5 +19,10 @@ namespace WiredBrainCoffee.CustomersApp
       var messageDialog = new MessageDialog("Customer added!");
       await messageDialog.ShowAsync();
     }
+
+    private void CheckBox_ManipulationCompleted(object sender, Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs e)
+    {
+
+    }
   }
 }
