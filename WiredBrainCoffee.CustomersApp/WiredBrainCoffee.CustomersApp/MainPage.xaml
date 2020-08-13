@@ -8,11 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Button Content="Add customer" 
-                Click="ButtonAddCustomer_Click" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="10"/>
-    </Grid>
+  <Grid>
+    <Button Click="ButtonAddCustomer_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+      <Button.Content>
+        <StackPanel Orientation="Horizontal">
+          <SymbolIcon Symbol="AddFriend"/>
+          <TextBlock Text="Add friend" Margin="5 0 0 0"/>
+        </StackPanel>
+      </Button.Content>
+    </Button>
+  </Grid>
 </Page>
