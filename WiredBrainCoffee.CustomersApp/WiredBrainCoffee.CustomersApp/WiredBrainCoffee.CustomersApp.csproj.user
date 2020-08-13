@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</Source>
+    <SmallTileSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</SmallTileSource>
+    <MediumTileSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</MediumTileSource>
+    <WideTileSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</WideTileSource>
+    <LargeTileSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</LargeTileSource>
+    <AppIconSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</AppIconSource>
+    <SplashScreenSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\jaspe\Downloads\xaml-getting-started\03\demos\before\coffeeCup.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>
