@@ -14,6 +14,7 @@
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="Auto"/>
       <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
@@ -21,14 +22,14 @@
     </Grid.RowDefinitions>
     
     <!-- Header -->
-    <StackPanel Orientation="Horizontal" Background="#f05A28" Grid.ColumnSpan="2">
-      <Image Source="Images/logo.png" Height="90"/>
-      <TextBlock Text="Coffee Customers" FontSize="30" FontWeight="ExtraBold" Foreground="White" HorizontalAlignment="Center"/>
-      <TextBlock Text="Version 1.0" Foreground="#333333"/>
-    </StackPanel>
+    <RelativePanel Background="#f05A28" Grid.ColumnSpan="3">
+      <Image Source="Images/logo.png" Height="50" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="Title"/>
+      <TextBlock Text="Coffee Customers" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="10" RelativePanel.AlignHorizontalCenterWithPanel="True" Name="Title"/>
+      <TextBlock Text="0.1.1" Foreground="#333333" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
+    </RelativePanel>
     
     <!-- Customer list -->
-    <Grid Background="#EEEEEEEE" Grid.Row="1">
+    <Grid Background="{ThemeResource AppBarBackgroundThemeBrush}" Grid.Row="1" x:Name="customerListGrid">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition/>
@@ -37,7 +38,7 @@
         <Button Click="Flip_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
           <Button.Content>
             <StackPanel Orientation="Horizontal">
-              <SymbolIcon Symbol="Forward"/>
+              <SymbolIcon Symbol="Forward" x:Name="flipIcon"/>
             </StackPanel>
           </Button.Content>
         </Button>

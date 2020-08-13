@@ -23,8 +23,11 @@ namespace WiredBrainCoffee.CustomersApp
 
     private void Flip_Click(object sender, RoutedEventArgs e)
     {
-
-    }
+      int column = (int)customerListGrid.GetValue(Grid.ColumnProperty);
+      int newcolumn = column == 0 ? 2 : 0;
+      customerListGrid.SetValue(Grid.ColumnProperty, newcolumn);
+      flipIcon.Symbol = newcolumn == 0 ? Symbol.Forward : Symbol.Back;
+      }
 
     private void Del_Click(object sender, RoutedEventArgs e)
     {
