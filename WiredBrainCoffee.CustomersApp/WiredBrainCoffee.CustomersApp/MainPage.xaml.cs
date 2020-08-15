@@ -22,7 +22,7 @@ namespace WiredBrainCoffee.CustomersApp
       _customerDataProvider = new CustomerDataProvider();
       App.Current.Suspending += App_Suspending;
     }
-    
+
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
       customerListView.Items.Clear();
@@ -53,7 +53,7 @@ namespace WiredBrainCoffee.CustomersApp
       int newcolumn = column == 0 ? 2 : 0;
       Grid.SetColumn(customerListGrid, newcolumn);
       flipIcon.Symbol = newcolumn == 0 ? Symbol.Forward : Symbol.Back;
-      }
+    }
 
     private void Del_Click(object sender, RoutedEventArgs e)
     {
@@ -66,5 +66,26 @@ namespace WiredBrainCoffee.CustomersApp
       txtLastName.Text = customer?.LastName ?? "";
       chkIsDeveloper.IsChecked = customer?.IsDeveloper;
     }
+
+    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+
+    }
+
+    private void CheckBox_IsCheckedChanged(object sender, RoutedEventArgs e)
+    {
+      UpdateCustomer();
+    }
+
+    private void UpdateCustomer()
+    {
+      var customer = customerListView.SelectedItem as Customer;
+      if (customer != null)
+      {
+        customer.FirstName = txtFirstName.Text;
+        customer.LastName = txtLastName.Text;
+        customer.IsDeveloper = chkIsDeveloper.IsChecked.GetValueOrDefault();
+      }
+     }
   }
 }
