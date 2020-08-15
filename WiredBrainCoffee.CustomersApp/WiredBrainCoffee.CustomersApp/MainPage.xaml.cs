@@ -22,8 +22,7 @@ namespace WiredBrainCoffee.CustomersApp
       _customerDataProvider = new CustomerDataProvider();
       App.Current.Suspending += App_Suspending;
     }
-
-
+    
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
       customerListView.Items.Clear();
@@ -58,6 +57,14 @@ namespace WiredBrainCoffee.CustomersApp
 
     private void Del_Click(object sender, RoutedEventArgs e)
     {
+    }
+
+    private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+      var customer = customerListView.SelectedItem as Customer;
+      txtFirstName.Text = customer?.FirstName ?? ""; // if null, assign empty string
+      txtLastName.Text = customer?.LastName ?? "";
+      chkIsDeveloper.IsChecked = customer?.IsDeveloper;
     }
   }
 }
