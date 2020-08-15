@@ -59,17 +59,7 @@
           </Button.Content>
         </Button>
       </StackPanel>
-      <ListView Grid.Row="1">
-        <ListViewItem>Thomas</ListViewItem>
-        <ListViewItem>Steven</ListViewItem>
-        <ListViewItem>Anna</ListViewItem>
-        <ListViewItem>Derrick</ListViewItem>
-        <ListViewItem>Parviz</ListViewItem>
-        <ListViewItem>Zeinab</ListViewItem>
-        <ListViewItem>Lilly</ListViewItem>
-        <ListViewItem>Jamal</ListViewItem>
-        <ListViewItem>Louise</ListViewItem>
-      </ListView>
+      <ListView Grid.Row="1" x:Name="customerListView" DisplayMemberPath="FirstName" />
     </Grid>
     
     <!-- Customer detail -->
