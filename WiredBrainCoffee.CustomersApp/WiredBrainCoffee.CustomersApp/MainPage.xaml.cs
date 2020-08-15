@@ -3,6 +3,10 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using System;
 using WiredBrainCoffee.CustomersApp.DataProvider;
+using Windows.ApplicationModel;
+using System.Linq;
+using WiredBrainCoffee.CustomersApp.Model;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -16,7 +20,9 @@ namespace WiredBrainCoffee.CustomersApp
       this.InitializeComponent();
       this.Loaded += MainPage_Loaded;
       _customerDataProvider = new CustomerDataProvider();
+      App.Current.Suspending += App_Suspending;
     }
+
 
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
@@ -28,6 +34,14 @@ namespace WiredBrainCoffee.CustomersApp
         customerListView.Items.Add(customer);
       }
     }
+    private async void App_Suspending(object sender, SuspendingEventArgs e)
+    {
+      var deferral = e.SuspendingOperation.GetDeferral();
+      await _customerDataProvider.SaveCustomersAsync(customerListView.Items.OfType<Customer>());
+      deferral.Complete();
+    }
+
+
     private async void Add_Click(object sender, RoutedEventArgs e)
     {
       var messageDialog = new MessageDialog("Customer added!");

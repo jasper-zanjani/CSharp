@@ -48,5 +48,19 @@ namespace WiredBrainCoffee.CustomersApp.DataProvider
 
       return customerList;
     }
+    public async Task SaveCustomersAsync(IEnumerable<Customer> customers)
+    {
+      var storageFile = await _localFolder.CreateFileAsync(_customersFileName, CreationCollisionOption.ReplaceExisting);
+
+      using (var stream = await storageFile.OpenAsync(FileAccessMode.ReadWrite))
+      {
+        using (var dataWriter = new DataWriter(stream))
+        {
+          var json = JsonConvert.SerializeObject(customers, Formatting.Indented);
+          dataWriter.WriteString(json);
+          await dataWriter.StoreAsync();
+        }
+      }
+    }
   }
 }
