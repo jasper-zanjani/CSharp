@@ -40,13 +40,6 @@ namespace WiredBrainCoffee.CustomersApp
       deferral.Complete();
     }
 
-
-    private async void Add_Click(object sender, RoutedEventArgs e)
-    {
-      var messageDialog = new MessageDialog("Customer added!");
-      await messageDialog.ShowAsync();
-    }
-
     private void Flip_Click(object sender, RoutedEventArgs e)
     {
       int column = Grid.GetColumn(customerListGrid);
@@ -57,6 +50,18 @@ namespace WiredBrainCoffee.CustomersApp
 
     private void Del_Click(object sender, RoutedEventArgs e)
     {
+      var customer = customerListView.SelectedItem as Customer;
+      if (customer !=null)
+      {
+        customerListView.Items.Remove(customer);
+      }
+    }
+
+    private void Add_Click(object sender, RoutedEventArgs e)
+    {
+      var customer = new Customer { FirstName = "New" };
+      customerListView.Items.Add(customer);
+      customerListView.SelectedItem = customer;
     }
 
     private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -69,7 +74,7 @@ namespace WiredBrainCoffee.CustomersApp
 
     private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
     {
-
+      UpdateCustomer();
     }
 
     private void CheckBox_IsCheckedChanged(object sender, RoutedEventArgs e)
@@ -86,6 +91,6 @@ namespace WiredBrainCoffee.CustomersApp
         customer.LastName = txtLastName.Text;
         customer.IsDeveloper = chkIsDeveloper.IsChecked.GetValueOrDefault();
       }
-     }
+    }
   }
 }

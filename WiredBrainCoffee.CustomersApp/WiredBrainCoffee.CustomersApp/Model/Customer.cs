@@ -1,12 +1,43 @@
-﻿using System.Reflection.Metadata;
+﻿using WiredBrainCoffee.CustomersApp.Base;
 
 namespace WiredBrainCoffee.CustomersApp.Model
 {
-  public class Customer
+  public class Customer : Observable
   {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public bool IsDeveloper { get; set; }
-  }
+    private string _firstName;
+    private string lastName;
+    private bool isDeveloper;
 
+    public string FirstName
+    {
+      get => _firstName;
+      set
+      {
+        _firstName = value;
+        // OnPropertyChanged("FirstName");
+        // Alternatively, use the `nameof` keyword:
+        // OnPropertyChange(nameof(FirstName));
+        OnPropertyChanged();
+
+      }
+    }
+    public string LastName
+    {
+      get => lastName;
+      set
+      {
+        lastName = value;
+        OnPropertyChanged();
+      }
+    }
+    public bool IsDeveloper
+    {
+      get => isDeveloper; 
+      set
+      {
+        isDeveloper = value;
+        OnPropertyChanged();
+      }
+    }
+  }
 }

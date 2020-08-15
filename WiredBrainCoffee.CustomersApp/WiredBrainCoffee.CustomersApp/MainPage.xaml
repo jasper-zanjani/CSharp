@@ -20,14 +20,14 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    
+
     <!-- Header -->
     <RelativePanel Background="#f05A28" Grid.ColumnSpan="3">
       <Image Source="Images/logo.png" Height="50" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="Title"/>
       <TextBlock Text="Coffee Customers" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="10" RelativePanel.AlignHorizontalCenterWithPanel="True" Name="Title"/>
       <TextBlock Text="0.1.1" Foreground="#333333" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
     </RelativePanel>
-    
+
     <!-- Customer list -->
     <Grid Background="{ThemeResource AppBarBackgroundThemeBrush}" Grid.Row="1" x:Name="customerListGrid">
       <Grid.RowDefinitions>
@@ -51,19 +51,17 @@
           </Button.Content>
         </Button>
         <Button Click="Del_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5">
-          <Button.Content>
-            <StackPanel Orientation="Horizontal">
-              <SymbolIcon Symbol="Delete"/>
-              <TextBlock Text="Delete" Margin="5 0 0 0"/>
-            </StackPanel>
-          </Button.Content>
+          <StackPanel Orientation="Horizontal">
+            <SymbolIcon Symbol="Delete"/>
+            <TextBlock Text="Delete" Margin="5 0 0 0"/>
+          </StackPanel>
         </Button>
       </StackPanel>
       <ListView 
         Grid.Row="1" x:Name="customerListView" DisplayMemberPath="FirstName" 
         SelectionChanged="CustomerListView_SelectionChanged"/>
     </Grid>
-    
+
     <!-- Customer detail -->
     <StackPanel Grid.Row="1" Grid.Column="1">
       <TextBox Header="Firstname" Margin="10" x:Name="txtFirstName" TextChanged="TextBox_TextChanged"/>
