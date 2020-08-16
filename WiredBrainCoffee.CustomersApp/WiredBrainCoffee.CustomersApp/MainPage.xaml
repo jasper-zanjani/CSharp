@@ -9,8 +9,7 @@
     xmlns:model="using:WiredBrainCoffee.CustomersApp.Model"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    d:DesignWidth="600"
-    d:DesignHeight="400">
+    RequestedTheme="Light">
 
   <Grid>
     <Grid.ColumnDefinitions>
@@ -24,14 +23,14 @@
     </Grid.RowDefinitions>
 
     <!-- Header -->
-    <RelativePanel Background="#f05A28" Grid.ColumnSpan="3">
+    <RelativePanel Background="#2576cf" Grid.ColumnSpan="3">
       <Image Source="Images/logo.png" Height="50" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.LeftOf="Title"/>
       <TextBlock Text="Coffee Customers" Style="{StaticResource TitleTextBlockStyle}" VerticalAlignment="Bottom" Margin="10" RelativePanel.AlignHorizontalCenterWithPanel="True" Name="Title"/>
       <TextBlock Text="0.1.1" Foreground="#333333" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
     </RelativePanel>
 
     <!-- Customer list -->
-    <Grid Background="{ThemeResource AppBarBackgroundThemeBrush}" Grid.Row="1" x:Name="customerListGrid">
+    <Grid Grid.Row="1" x:Name="customerListGrid">
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto"/>
         <RowDefinition/>
