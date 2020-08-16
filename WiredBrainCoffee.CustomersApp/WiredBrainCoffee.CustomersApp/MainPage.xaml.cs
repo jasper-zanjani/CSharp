@@ -6,6 +6,7 @@ using WiredBrainCoffee.CustomersApp.DataProvider;
 using Windows.ApplicationModel;
 using System.Linq;
 using WiredBrainCoffee.CustomersApp.Model;
+using WiredBrainCoffee.CustomersApp.Controls;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -63,12 +64,5 @@ namespace WiredBrainCoffee.CustomersApp
       customerListView.Items.Add(customer);
       customerListView.SelectedItem = customer;
     }
-
-    private void CustomerListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-      var customer = customerListView.SelectedItem as Customer;
-      customerDetailControl.Customer = customer;
-    }
-
   }
 }
