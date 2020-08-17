@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DelegatesAndEvents
+namespace LambdasAndDelegates
 {
-  public class WorkPerformedEventArgs : EventArgs
-  {
-    public WorkPerformedEventArgs(int hours, WorkType workType)
+    public class WorkPerformedEventArgs : EventArgs
     {
-      Hours = hours;
-      WorkType = workType;
-    }
+        public WorkPerformedEventArgs(int hours, WorkType workType)
+        {
+            Hours = hours;
+            WorkType = workType;
+        }
 
-    public int Hours { get; set; }
-    public WorkType WorkType { get; set; }
-  }
+        public int Hours { get; set; }
+        public WorkType WorkType { get; set; }
+    }
 }
