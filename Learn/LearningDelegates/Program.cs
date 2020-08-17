@@ -1,29 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace LearningDelegates
+namespace DelegatesAndEvents
 {
-  public enum WorkType { Golf, Meeting, Report }
-  public delegate void WorkPerformedHandler(int hours, WorkType workType);
-
   class Program
   {
-    static void WorkPerformed1( int hours, WorkType workType)
-    {
-      Console.WriteLine("WorkPerformed1 called");
-    }
-
-    static void WorkPerformed2(int hours, WorkType workType)
-    {
-      Console.WriteLine("WorkPerformed2 called");
-    }
-
     static void Main(string[] args)
     {
-      WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
-      WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
+      var worker = new Worker();
+      worker.DoWork(2, WorkType.Golf);
 
-      del1(1, WorkType.Golf);
-      del2(2, WorkType.Report);
+      Console.Read();
     }
+
+  }
+
+  public enum WorkType
+  {
+    GoToMeetings,
+    Golf,
+    GenerateReports
   }
 }
