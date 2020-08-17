@@ -10,18 +10,16 @@ namespace DelegatesAndEvents
   {
     static void Main(string[] args)
     {
-      var worker = new Worker();
-      worker.DoWork(2, WorkType.Golf);
+      var enterpriseMission = new StarshipMission();
+      enterpriseMission.StartMission(2, MissionType.Exploration);
 
       Console.Read();
     }
 
   }
 
-  public enum WorkType
+  public enum MissionType
   {
-    GoToMeetings,
-    Golf,
-    GenerateReports
+    Exploration, Investigation, Intercept
   }
 }
