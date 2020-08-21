@@ -16,7 +16,6 @@ namespace StarshipEvents
   {
     static void Main(string[] args)
     {
-      new StarshipMission("Antares");
       new StarshipMission("Sirius");
     }
   }
@@ -26,16 +25,22 @@ namespace StarshipEvents
     public string Destination;
     public Status Status;
 
+    public event StatusReportHandler StatusReportEvent;
+
     public StarshipMission(string destination)
     {
+      StatusReportEvent += SimpleStatusReport;
+
       Destination = destination;
       Status = Status.Good;
 
       Random randint = new Random();
       int distance = randint.Next(3, 9);
 
+      // Basic status report using delegate implementation
+      //StatusReportHandler StoppedMissionLog = new StatusReportHandler(SimpleStatusReport);
+
       UnderwayStatusReportHandler UnderwayMissionLog = new UnderwayStatusReportHandler(SimpleUnderwayStatusReport);
-      StatusReportHandler StoppedMissionLog = new StatusReportHandler(SimpleStatusReport);
       BattleReportHandler BattleMissionLog = new BattleReportHandler(SimpleBattleReportHandler);
 
       Console.WriteLine($"Plotting course to {destination}, {distance} light-years away!");
@@ -64,7 +69,23 @@ namespace StarshipEvents
           UnderwayMissionLog(Status, distance - i);
         }
       }
-      StoppedMissionLog(Status);
+      StatusReportEvent(Status);
+      //StatusReportEventHandler(Status, 3);
+      //StoppedMissionLog(Status);
+    }
+
+    protected virtual void StatusReportEventHandler(Status s, int _)
+    {
+      // Basic status report using event implementation
+      StatusReportEvent(s);
+
+      //var Log = StatusReportEvent as StatusReportHandler;
+
+      //if (Log != null)
+      //{
+      //  Log(s);
+      //}
+      //SimpleStatusReport(s);
     }
 
     void SimpleStatusReport(Status s)
@@ -85,13 +106,13 @@ namespace StarshipEvents
           message = "[CONTACT LOST]";
           break;
       }
-      Console.WriteLine(message);
+      Console.WriteLine($"STATUS REPORT: {message}");
     }
 
     void SimpleUnderwayStatusReport(Status status, int distance)
     {
       System.Threading.Thread.Sleep(status == Status.Good ? 300 : 600);
-      Console.WriteLine($"Underway...{distance} light-years to go..");
+      Console.WriteLine($"UNDERWAY: {distance} light-years remaining...");
     }
 
     public void OnMissionComplete()
